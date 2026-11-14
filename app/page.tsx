@@ -11,11 +11,12 @@ export default function Page() {
       <div className="flex h-20 shrink-0 items-center justify-between rounded-lg bg-blue-500 p-4 md:h-52">
         {/* <AcmeLogo /> */}
         <Image
-          src="/logo/uia-logo.png"
+          src="/uia-logo.png"
           width={500}
           height={350}
-          className= "hidden md:block"
+          className="block max-h-full w-auto object-contain"
           alt="Banner UIA"
+          priority
         />
       </div>
 

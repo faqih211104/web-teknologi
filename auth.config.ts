@@ -4,7 +4,8 @@ export const authConfig = {
   pages: {
     signIn: '/login',
   },
-    callbacks: {
+  trustHost: true,
+  callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
       const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');

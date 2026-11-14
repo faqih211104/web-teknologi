@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import NavLinks from '@/app/ui/dashboard/nav-links';
-// import AcmeLogo from '@/app/ui/acme-logo';
 import { PowerIcon } from '@heroicons/react/24/outline';
-// 1. TAMBAHKAN IMPORT INI DI ATAS
 import Image from 'next/image'; 
+import { signOut } from '@/auth';
 
 export default function SideNav() {
   return (
@@ -13,24 +12,27 @@ export default function SideNav() {
         href="/"
       >
         <div className="w-32 text-white md:w-40">
-         {/*<AcmeLogo />*/}
-         
-         {/* 2. UBAH DARI <image> MENJADI <Image /> DENGAN HURUF KAPITAL */}
-         <Image
-           src="/Logo/uia-logo.png" // Tambahkan tanda / di awal jika gambar ada di folder public
-           width={300}
-           height={160}
-           className="hidden md:block"
-           alt="Banner uia"
-         />
+          <Image
+            src="/uia-logo.png"
+            width={300}
+            height={160}
+            className="block max-h-full w-auto object-contain"
+            alt="Banner uia"
+            priority
+          />
         </div>
       </Link>
       
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
         <NavLinks />
-        <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
-        <form>
-          <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
+        <div className="hidden h-auto w-full grow rounded-md bg-gray-50 dark:bg-gray-800 md:block"></div>
+        <form
+          action={async () => {
+            'use server';
+            await signOut({ redirectTo: '/' });
+          }}
+        >
+          <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 dark:bg-gray-800 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 dark:hover:bg-gray-700 md:flex-none md:justify-start md:p-2 md:px-3">
             <PowerIcon className="w-6" />
             <div className="hidden md:block">Sign Out</div>
           </button>

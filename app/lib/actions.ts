@@ -10,6 +10,9 @@ export async function authenticate(
   formData: FormData,
 ) {
   try {
+    if (!formData.get('redirectTo')) {
+      formData.append('redirectTo', '/dashboard');
+    }
     await signIn('credentials', formData);
   } catch (error) {
     if (error instanceof AuthError) {
