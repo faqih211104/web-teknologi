@@ -14,8 +14,9 @@ export default function Page() {
           src="/uia-logo.png"
           width={500}
           height={350}
-          className= "hidden md:block"
+          className="block max-h-full w-auto object-contain"
           alt="Banner UIA"
+          priority
         />
       </div>
 
