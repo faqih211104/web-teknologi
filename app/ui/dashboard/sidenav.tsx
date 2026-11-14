@@ -17,7 +17,7 @@ export default function SideNav() {
          
          {/* 2. UBAH DARI <image> MENJADI <Image /> DENGAN HURUF KAPITAL */}
          <Image
-           src="/Logo/uia-logo.png" // Tambahkan tanda / di awal jika gambar ada di folder public
+           src="/uia-logo.png" // Tambahkan tanda / di awal jika gambar ada di folder public
            width={300}
            height={160}
            className="hidden md:block"
