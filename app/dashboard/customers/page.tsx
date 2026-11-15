@@ -1,3 +1,3 @@
 export default function Page() {
-  return <p>Customers Page</p>;
+  return <p className="text-gray-900 dark:text-gray-100">Customers Page</p>;
 }
